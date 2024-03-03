@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Grid, CircularProgress } from '@mui/material';
-import { useAppSelector } from '../hooks';
+import { useAppSelector } from '../store/hooks';
 import NavBar from '../components/NavBar';
 import PokemonCard from '../components/PokemonCard';
-import { Ability, TypePokemon, PokemonSprites } from '../types';
+import { Ability, TypePokemon, PokemonSprites } from '../types/PokemonType';
 
 interface Pokedex {
     id: number;
@@ -20,7 +20,7 @@ const Pokedex: React.FC = () => {
 
     useEffect(() => {
         if (!pokedexRedux.dataPokedex.length) {
-            setError("Nenhum pokemon favoritado ainda");
+            setError("Não há nenhum POKEMON no seu POKEDEX");
         }
     }, [pokedexRedux]);
 

@@ -1,19 +1,28 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import DefaultLayout from '../config/layout/DefaultLayout';
 import Home from '../pages/Home';
 import Pokedex from '../pages/Pokedex';
-import DefaultLayout from '../config/layout/DefaultLayout';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <DefaultLayout 
+        children={<Home />} 
+        />
+    },
+    {
+        path: '/pokedex',
+        element: <DefaultLayout 
+        children={<Pokedex />} 
+        />
+    },
+
+]);
 
 const AppRoutes: React.FC = () => {
-    return (
-        <Router>
-            <DefaultLayout>
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route path="/pokedex" component={Pokedex} />
-                </Switch>
-            </DefaultLayout>
-        </Router>
-    );
+    return <RouterProvider 
+    router={router} />;
 };
 
 export default AppRoutes;
