@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { Ability, TypePokemon, PokemonSprites } from '../types';
-import apiPokemon from '../api/apiPokemon';
+import { Ability, TypePokemon, PokemonSprites } from '../../../types/PokemonType';
+import apiPokemon from '../../../service/api.service';
 
 interface Pokedex {
     id: number;

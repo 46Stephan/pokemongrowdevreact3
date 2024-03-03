@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { Ability, TypePokemon, PokemonSprites } from '../types';
-import apiPokemon from '../api/apiPokemon';
+import { Ability, TypePokemon, PokemonSprites } from '../../../types/PokemonType';
+import apiPokemon from '../../../service/api.service';
+import axios from 'axios';
 
 interface Pokemon {
     id: number;
@@ -33,6 +34,7 @@ export const getPokemon = createAsyncThunk('getPokemon', async (page: number, { 
     const response = await apiPokemon.get(`/?limit=${itemsPerPage}&offset=${(page - 1) * itemsPerPage}`);
     const totalCount = response.data.count;
     const totalPages = Math.ceil(totalCount / itemsPerPage);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const promises = response.data.results.map((item: any) => axios.get(item.url));
     const result = await Promise.all(promises);
     const data = result.map((response) => response.data);
