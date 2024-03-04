@@ -6,9 +6,7 @@ import { ThemeProvider } from '@mui/material';
 
 import AppRoutes from './routes/AppRoutes';
 import { persistor, store } from './store';
-import defaultTheme from './config/theme/defaultTheme';
-
-// Styles
+import defaultTheme from './config/theme/DefaultTheme';
 import './App.css';
 
 function App() {
