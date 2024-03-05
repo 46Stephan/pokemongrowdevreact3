@@ -55,11 +55,11 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
                     <Button 
                     onClick={handlePokedex} 
                     sx={{ color: isPokemonInPokedex 
-                    ? '#eac625' : '#ddd8dd', alignSelf: 'end', display: 'flex', paddingInlineStart: '15px' }}
+                    ? '#ac25eadd' : '#ddd8dd', alignSelf: 'end', display: 'flex', paddingInlineStart: '15px' }}
                     >
                     <StarIcon 
                     sx={{ padding: '3px', borderRadius: '100%', width: '21px', height: '21px', backgroundColor: isPokemonInPokedex 
-                    ? "#000" : "#d58318" }} 
+                    ? "#000" : "#8918d5" }} 
                     className='favoritePokemon' 
                     />
                     </Button>

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { CircularProgress, Stack, Grid, PaginationItem } from '@mui/material';
+import { CircularProgress, Stack, Grid, PaginationItem, Box } from '@mui/material';
 import  Pagination  from '@mui/material/Pagination';
 import { useAppSelector, useAppDispatch } from '../store/hooks';
 import { getPokemon } from '../store/modules/pokemonSlice/pokemonSlice';
@@ -16,7 +16,7 @@ const ListPokemon: React.FC = () => {
 
     }, [currentPage, dispatch, pokemonRedux.currentPage]);
 
-    const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
+    const handlePageChange = (_event: React.ChangeEvent<unknown>, value: number) => {
         if (value !== pokemonRedux.currentPage) {
             dispatch(getPokemon(value))
         }
@@ -28,7 +28,7 @@ const ListPokemon: React.FC = () => {
 
 
     return (
-        <div>
+        <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minlength: '100vh' }}>
             <Stack spacing={2} sx={{ display: 'flex', margin: '10px 0px 20px 15px', alignItems: 'center' }}>
                 <Pagination
                     count={totalPages}
@@ -54,7 +54,7 @@ const ListPokemon: React.FC = () => {
         </Grid>
     ))}
 </Grid>
-        </div>
+        </Box>
     );
 };
 

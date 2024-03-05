@@ -20,7 +20,7 @@ const Pokedex: React.FC = () => {
 
     useEffect(() => {
         if (!pokedexRedux.dataPokedex.length) {
-            setError("Não há nenhum POKEMON no seu POKEDEX");
+            setError("Não há nenhum POKEMON no sua POKEDEX!");
         }
     }, [pokedexRedux]);
 

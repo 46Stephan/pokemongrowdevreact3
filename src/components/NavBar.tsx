@@ -29,7 +29,7 @@ const NavBar = () => {
 
                 <Toolbar sx={{ gap: "2px", height: '130px' }}>
                     <img 
-                    style={{ padding: '12px 40px 0px 60px', height: '75px', width: '80px' }} 
+                    style={{ padding: '12px 40px 0px 60px', height: '100px', width: '120px' }} 
                     alt="Remy Sharp" 
                     src={gengar} />
 
@@ -59,7 +59,7 @@ const NavBar = () => {
                     <img 
                     className='hideTitlePokemon' 
                     src={pokemonTitle} 
-                    style={{ height: '120px', width: '340px', paddingLeft: '75px' }} 
+                    style={{ height: '140px', width: '340px', paddingLeft: '75px' }} 
                     alt='pokemon-title'>
                     </img>
                 </Toolbar>
